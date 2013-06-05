@@ -26,6 +26,7 @@ import java.util.Date;
 public class SingleEvent {
 
     private int singleEventID;
+    private int eventID;
     private String location;
     private Date date;
     private String supervisor;
@@ -35,14 +36,16 @@ public class SingleEvent {
      * Create a new SingleEvent object.
      * 
      * @param singleEventID
+     * @param eventID
      * @param location
      * @param date
      * @param supervisor
      * @param durationMinutes
      */
-    public SingleEvent(int singleEventID, String location, Date date,
-	    String supervisor, int durationMinutes) {
+    public SingleEvent(int singleEventID, int eventID, String location,
+	    Date date, String supervisor, int durationMinutes) {
 	this.singleEventID = singleEventID;
+	this.eventID = eventID;
 	this.location = location;
 	this.date = date;
 	this.supervisor = supervisor;
@@ -57,6 +60,15 @@ public class SingleEvent {
      */
     public int getSingleEventID() {
 	return singleEventID;
+    }
+
+    /**
+     * Get the ID of the event this fixed date belongs to.
+     * 
+     * @return
+     */
+    public int getEventID() {
+	return eventID;
     }
 
     /**

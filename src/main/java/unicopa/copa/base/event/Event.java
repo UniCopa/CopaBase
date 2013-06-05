@@ -26,6 +26,7 @@ import java.util.Set;
 public class Event {
 
     private int eventID;
+    private int eventGroupID;
     private String eventName;
     private Set<Integer> categories;
 
@@ -33,11 +34,14 @@ public class Event {
      * Create a new Event object.
      * 
      * @param eventID
+     * @param evenGroupID
      * @param eventName
      * @param categories
      */
-    public Event(int eventID, String eventName, Set<Integer> categories) {
+    public Event(int eventID, int evenGroupID, String eventName,
+	    Set<Integer> categories) {
 	this.eventID = eventID;
+	this.eventGroupID = evenGroupID;
 	this.eventName = eventName;
 	this.categories = categories;
     }
@@ -50,6 +54,15 @@ public class Event {
      */
     public int getEventID() {
 	return eventID;
+    }
+
+    /**
+     * Get the ID of the group this event belongs to.
+     * 
+     * @return
+     */
+    public int getEventGroupID() {
+	return eventGroupID;
     }
 
     /**
