@@ -16,7 +16,7 @@
  */
 package unicopa.copa.base.event;
 
-import java.util.Set;
+import java.util.List;
 
 /**
  * A group of Events. Similiar events can be grouped, e.g. to be listed together
@@ -29,7 +29,7 @@ public class EventGroup {
     private int eventGroupID;
     private String eventGroupName;
     private String eventGroupInfo;
-    private Set<Integer> categories;
+    private List<Integer> categories;
 
     /**
      * Create a new EventGroup object.
@@ -40,12 +40,14 @@ public class EventGroup {
      * @param categories
      */
     public EventGroup(int eventGroupID, String eventGroupName,
-	    String eventGroupInfo, Set<Integer> categories) {
+	    String eventGroupInfo, List<Integer> categories) {
 	this.eventGroupID = eventGroupID;
 	this.eventGroupName = eventGroupName;
 	this.eventGroupInfo = eventGroupInfo;
 	this.categories = categories;
     }
+    
+    public void EventGroup(){}
 
     /**
      * Get the ID of this group. It is guaranteed to be unique under all
@@ -82,7 +84,7 @@ public class EventGroup {
      * @return the IDs of all leaves of the category tree this group is
      *         associated with
      */
-    public Set<Integer> getCategories() {
+    public List<Integer> getCategories() {
 	return categories;
     }
 }

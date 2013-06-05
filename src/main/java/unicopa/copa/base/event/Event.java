@@ -16,7 +16,8 @@
  */
 package unicopa.copa.base.event;
 
-import java.util.Set;
+import java.util.List;
+
 
 /**
  * An event that can have multiple fixed dates (SingleEvents).
@@ -28,23 +29,25 @@ public class Event {
     private int eventID;
     private int eventGroupID;
     private String eventName;
-    private Set<Integer> categories;
+    private List<Integer> categories;
 
     /**
      * Create a new Event object.
      * 
      * @param eventID
-     * @param evenGroupID
+     * @param eventGroupID
      * @param eventName
      * @param categories
      */
-    public Event(int eventID, int evenGroupID, String eventName,
-	    Set<Integer> categories) {
+    public Event(int eventID, int eventGroupID, String eventName,
+	    List<Integer> categories) {
 	this.eventID = eventID;
-	this.eventGroupID = evenGroupID;
+	this.eventGroupID = eventGroupID;
 	this.eventName = eventName;
 	this.categories = categories;
     }
+    
+    public Event(){}
 
     /**
      * Get the ID of this event. It is guaranteed to be unique under all
@@ -81,7 +84,7 @@ public class Event {
      * @return the IDs of all leaves of the category tree this event is
      *         associated with
      */
-    public Set<Integer> getCategories() {
+    public List<Integer> getCategories() {
 	return categories;
     }
 }
