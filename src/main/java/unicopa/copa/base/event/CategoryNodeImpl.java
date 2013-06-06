@@ -28,7 +28,7 @@ public class CategoryNodeImpl implements CategoryNode {
 
     private int id;
     private String name;
-    private List<CategoryNodeImpl> children = new ArrayList<>();
+    private List<CategoryNodeImpl> children = new ArrayList<CategoryNodeImpl>();
 
     /**
      * Create a new category node.

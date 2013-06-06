@@ -28,11 +28,11 @@ import java.util.Set;
  */
 public class UserSettings {
 
-    private Set<String> gcmKeys = new HashSet<>();
+    private Set<String> gcmKeys = new HashSet<String>();
     private boolean emailNotification = false;
     private String language = "default";
-    private Map<Integer, UserEventSettings> eventSettings = new HashMap<>();
-    private Set<Integer> subscriptions = new HashSet<>();
+    private Map<Integer, UserEventSettings> eventSettings = new HashMap<Integer, UserEventSettings>();
+    private Set<Integer> subscriptions = new HashSet<Integer>();
 
     /**
      * Enable notifications for a Google Cloud Messaging key. The key is added
