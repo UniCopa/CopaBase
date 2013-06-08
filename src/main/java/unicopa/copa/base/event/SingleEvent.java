@@ -51,6 +51,14 @@ public class SingleEvent {
 	this.supervisor = supervisor;
 	this.durationMinutes = durationMinutes;
     }
+	
+	public SingleEvent(Long date) {
+	this.date = new Date(date);
+    }
+	
+	public SingleEvent() {
+
+    }
 
     /**
      * Get the ID of this fixed date. It is guaranteed to be unique under all
