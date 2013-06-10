@@ -51,12 +51,12 @@ public class SingleEvent {
 	this.supervisor = supervisor;
 	this.durationMinutes = durationMinutes;
     }
-	
-	public SingleEvent(Long date) {
+
+    public SingleEvent(Long date) {
 	this.date = new Date(date);
     }
-	
-	public SingleEvent() {
+
+    public SingleEvent() {
 
     }
 

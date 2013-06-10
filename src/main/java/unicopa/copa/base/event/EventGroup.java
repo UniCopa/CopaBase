@@ -46,8 +46,9 @@ public class EventGroup {
 	this.eventGroupInfo = eventGroupInfo;
 	this.categories = categories;
     }
-    
-    public EventGroup(){}
+
+    public EventGroup() {
+    }
 
     /**
      * Get the ID of this group. It is guaranteed to be unique under all

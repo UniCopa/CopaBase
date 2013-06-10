@@ -18,7 +18,6 @@ package unicopa.copa.base.event;
 
 import java.util.List;
 
-
 /**
  * An event that can have multiple fixed dates (SingleEvents).
  * 
@@ -46,8 +45,9 @@ public class Event {
 	this.eventName = eventName;
 	this.categories = categories;
     }
-    
-    public Event(){}
+
+    public Event() {
+    }
 
     /**
      * Get the ID of this event. It is guaranteed to be unique under all

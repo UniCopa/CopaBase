@@ -32,14 +32,21 @@ public class SingleEventUpdate {
     private String comment;
 
     /**
-     * Create a new SingleEventUpdate.
-     * If the update should be a creation or cancellation of a SingleEvent, use the correspondent constructors.
+     * Create a new SingleEventUpdate. If the update should be a creation or
+     * cancellation of a SingleEvent, use the correspondent constructors.
      * 
-     * @param updatedSingleEvent the new version of the SingleEvent, or null if the update should be a cancellation of the former SingleEvent
-     * @param oldSingleEventID the ID of the SingleEvent that should be updated, or 0 if this update should be a creation of a SingleEvent
-     * @param updateDate the date of the update
-     * @param creatorName the name of the person who introduced the update
-     * @param comment a text to describe the update
+     * @param updatedSingleEvent
+     *            the new version of the SingleEvent, or null if the update
+     *            should be a cancellation of the former SingleEvent
+     * @param oldSingleEventID
+     *            the ID of the SingleEvent that should be updated, or 0 if this
+     *            update should be a creation of a SingleEvent
+     * @param updateDate
+     *            the date of the update
+     * @param creatorName
+     *            the name of the person who introduced the update
+     * @param comment
+     *            a text to describe the update
      */
     public SingleEventUpdate(SingleEvent updatedSingleEvent,
 	    int oldSingleEventID, Date updateDate, String creatorName,
@@ -50,28 +57,37 @@ public class SingleEventUpdate {
 	this.creatorName = creatorName;
 	this.comment = comment;
     }
-    
+
     /**
      * Create a SingleEventUpdate that is a creation of a SingleEvent.
-     * @param newSingleEvent the SingleEvent to be added to the event
-     * @param updateDate the date of the update
-     * @param comment a text to describe the reason for the action or give further information
+     * 
+     * @param newSingleEvent
+     *            the SingleEvent to be added to the event
+     * @param updateDate
+     *            the date of the update
+     * @param comment
+     *            a text to describe the reason for the action or give further
+     *            information
      */
-    public SingleEventUpdate(SingleEvent newSingleEvent, Date updateDate, String comment) {
-        this(newSingleEvent,
-	    0, null, null,
-	    comment);
+    public SingleEventUpdate(SingleEvent newSingleEvent, Date updateDate,
+	    String comment) {
+	this(newSingleEvent, 0, null, null, comment);
     }
-    
+
     /**
      * Create a SingleEventUpdate that is a cancellation of a SingleEvent.
-     * @param oldSingleEventID the ID of the SingleEvent to be cancelled
-     * @param updateDate the date of the update
-     * @param comment a text to describe the reason for the action or give further information
+     * 
+     * @param oldSingleEventID
+     *            the ID of the SingleEvent to be cancelled
+     * @param updateDate
+     *            the date of the update
+     * @param comment
+     *            a text to describe the reason for the action or give further
+     *            information
      */
-    public SingleEventUpdate(int oldSingleEventID, Date updateDate, String comment) {
-        this(null, oldSingleEventID, null, null,
-	    comment);
+    public SingleEventUpdate(int oldSingleEventID, Date updateDate,
+	    String comment) {
+	this(null, oldSingleEventID, null, null, comment);
     }
 
     /**
@@ -123,20 +139,23 @@ public class SingleEventUpdate {
     public String getComment() {
 	return comment;
     }
-    
+
     /**
      * Check whether this update stands for a creation of a SingleEvent.
+     * 
      * @return true if the update stands for a creation of a SingleEvent
      */
     public boolean isSingleEventCreation() {
-        return oldSingleEventID == 0;
+	return oldSingleEventID == 0;
     }
-    
+
     /**
-     * Check Check whether this update stands for a cancellation of a SingleEvent.
+     * Check Check whether this update stands for a cancellation of a
+     * SingleEvent.
+     * 
      * @return true if this update stands for a cancellation of a SingleEvent.
      */
     public boolean isCancellation() {
-        return updatedSingleEvent == null;
+	return updatedSingleEvent == null;
     }
 }
