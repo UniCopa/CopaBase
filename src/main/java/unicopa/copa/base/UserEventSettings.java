@@ -24,6 +24,20 @@ package unicopa.copa.base;
 public class UserEventSettings {
 
     private String colorCode;
+    
+    /**
+     * 	The default constructor
+     */
+    public UserEventSettings() {
+
+    }
+    
+    /**
+     * The constructor for UserEventSettings that is used by the Mapper
+     */
+    public UserEventSettings(String colorCode) {
+	this.colorCode = colorCode;
+    }
 
     public String getColorCode() {
 	return this.colorCode;
