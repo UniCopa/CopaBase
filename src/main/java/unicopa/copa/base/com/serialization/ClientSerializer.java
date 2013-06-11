@@ -28,13 +28,14 @@ import unicopa.copa.base.com.exception.RequestNotPracticableException;
  * @author Felix Wiemuth
  */
 public class ClientSerializer extends Serializer {
-    private static final String packagePrefixResponse = AbstractResponse.class
-	    .getPackage().getName().concat(".");
+    private static final String packagePrefixResponse = "unicopa.copa.base.com.request.";
+    private static final String packagePrefixException = "unicopa.copa.base.com.exception.";
 
     public static AbstractResponse deserializeResponse(String json)
 	    throws APIException, PermissionException,
 	    RequestNotPracticableException, InternalErrorException {
-	Object data = deserialize(json, packagePrefixResponse);
+	Object data = deserialize(json, packagePrefixResponse,
+		packagePrefixException);
 	// NOTE the possible types for data are ... //TODO specify
 	if (data instanceof APIException) {
 	    throw (APIException) data;

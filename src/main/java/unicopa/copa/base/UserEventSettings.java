@@ -24,14 +24,14 @@ package unicopa.copa.base;
 public class UserEventSettings {
 
     private String colorCode;
-    
+
     /**
-     * 	The default constructor
+     * The default constructor
      */
     public UserEventSettings() {
 
     }
-    
+
     /**
      * The constructor for UserEventSettings that is used by the Mapper
      */

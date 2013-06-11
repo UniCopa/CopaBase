@@ -56,7 +56,26 @@ public class Serializer {
 	return jo.toString();
     }
 
-    protected static Object deserialize(String json, String packagePrefix)
+    /**
+     * Deserialize a JSON string to produce an expected object of a class known
+     * to the system. After API specification, the JSON object should have the
+     * form {"type":"TYPE","data":JSON} where TYPE is the simple class name of
+     * the java object represented and JSON is the standard JSON serialization
+     * of this object.
+     * 
+     * @param json
+     * @param packagePrefixes
+     *            the fully qualified package names of the allowed packages to
+     *            look for the type specified in parameter "type" with "."
+     *            concatenated
+     * @return the deserialized object of type TYPE equivalent to the JSON
+     *         representation
+     * @throws APIException
+     *             if the string is not a JSON object, not of the expected form
+     *             or the class specified by TYPE cannot be found in the given
+     *             packages
+     */
+    protected static Object deserialize(String json, String... packagePrefixes)
 	    throws APIException {
 	try {
 	    JsonObject jo = parser.parse(json).getAsJsonObject();
@@ -65,8 +84,23 @@ public class Serializer {
 		throw new APIException(
 			"The JSON object does not contain the required \"type\" attribute.");
 	    }
-	    Class dataClass = Class.forName(packagePrefix.concat(dataClassJE
-		    .getAsString()));
+	    String className = dataClassJE.getAsString();
+	    // try to find class in all allowed packages
+	    Class dataClass = null;
+	    for (String packagePrefix : packagePrefixes) {
+		try {
+		    dataClass = Class.forName(packagePrefix.concat(className));
+		} catch (ClassNotFoundException classNotFoundException) {
+		    // ok, try the next package
+		}
+	    }
+	    if (dataClass == null) {
+		throw new APIException(
+			"The class name specified in attribute \"type\" in the JSON string (\""
+				+ className
+				+ "\") does not contain a class name known to the system.");
+	    }
+
 	    JsonElement dataJE = jo.get("data");
 	    if (dataJE == null) {
 		throw new APIException(
@@ -79,12 +113,6 @@ public class Serializer {
 	    // JsonIOException will not occur (no input streams used)
 	    throw new APIException(
 		    "The JSON string is malformatted (contains syntax errors).");
-	} catch (ClassNotFoundException ex) { // this exception occurs if the
-					      // "type" attribute in the JSON
-					      // object does not represent a
-					      // Request or Response class
-	    throw new APIException(
-		    "Attribute \"type\" in the JSON string does not contain a class name known to the system.");
 	}
     }
 }

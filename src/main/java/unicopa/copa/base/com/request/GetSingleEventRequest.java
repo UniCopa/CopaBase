@@ -14,7 +14,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package unicopa.copa.base.com;
+package unicopa.copa.base.com.request;
+
+import unicopa.copa.base.com.AbstractRequest;
 
 /**
  * 

@@ -46,12 +46,13 @@ public class UserSettings {
 	this.eventSettings = eventSettings;
 	this.subscriptions = subscriptions;
     }
+
     /**
      * The default constructor for class UserSettings
      */
     public UserSettings() {
     }
-    
+
     /**
      * Enable notifications for a Google Cloud Messaging key. The key is added
      * to the set of GCM keys. As long as a key resides in the user settings

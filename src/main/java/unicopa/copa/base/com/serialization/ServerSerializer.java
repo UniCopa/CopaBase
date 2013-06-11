@@ -25,8 +25,7 @@ import unicopa.copa.base.com.AbstractRequest;
  * @author Felix Wiemuth
  */
 public class ServerSerializer extends Serializer {
-    private static final String packagePrefixRequest = AbstractRequest.class
-	    .getPackage().getName().concat(".");
+    private static final String packagePrefixRequest = "unicopa.copa.base.com.request.";
 
     public static AbstractRequest deserializeRequest(String json)
 	    throws APIException {
