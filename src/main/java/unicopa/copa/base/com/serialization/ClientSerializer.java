@@ -17,7 +17,7 @@
 package unicopa.copa.base.com.serialization;
 
 import unicopa.copa.base.com.exception.APIException;
-import unicopa.copa.base.com.AbstractResponse;
+import unicopa.copa.base.com.request.AbstractResponse;
 import unicopa.copa.base.com.exception.InternalErrorException;
 import unicopa.copa.base.com.exception.PermissionException;
 import unicopa.copa.base.com.exception.RequestNotPracticableException;

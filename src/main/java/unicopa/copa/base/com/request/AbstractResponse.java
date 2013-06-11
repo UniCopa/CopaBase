@@ -14,30 +14,27 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package unicopa.copa.base.com;
+package unicopa.copa.base.com.request;
 
+import unicopa.copa.base.com.CommunicationItem;
+import unicopa.copa.base.com.exception.PermissionException;
+import unicopa.copa.base.com.exception.RequestNotPracticableException;
 import unicopa.copa.base.com.exception.APIException;
-import unicopa.copa.base.com.serialization.ServerSerializer;
-import unicopa.copa.base.UserRole;
+import unicopa.copa.base.com.exception.InternalErrorException;
+import unicopa.copa.base.com.serialization.ClientSerializer;
 
 /**
- * A request to be created by the client and sent to and received by the server.
+ * A response to be created by the service and sent to and received by the
+ * client.
  * 
  * @author Felix Wiemuth
  */
-public abstract class AbstractRequest extends CommunicationItem {
-    // TODO required???
-    protected static UserRole requiredPermissionLevel = UserRole.ADMINISTRATOR; // initialize
-										// with
-										// highest
-										// permission
-										// level
+public class AbstractResponse extends CommunicationItem {
 
-    public static UserRole getRequiredPermissionLevel() {
-	return requiredPermissionLevel;
+    public static AbstractResponse deserialize(String json)
+	    throws APIException, PermissionException,
+	    RequestNotPracticableException, InternalErrorException {
+	return ClientSerializer.deserializeResponse(json);
     }
 
-    public static AbstractRequest deserialize(String json) throws APIException {
-	return ServerSerializer.deserializeRequest(json);
-    }
 }

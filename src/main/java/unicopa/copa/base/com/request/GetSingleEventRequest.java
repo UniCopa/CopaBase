@@ -16,8 +16,6 @@
  */
 package unicopa.copa.base.com.request;
 
-import unicopa.copa.base.com.AbstractRequest;
-
 /**
  * 
  * @author Felix Wiemuth

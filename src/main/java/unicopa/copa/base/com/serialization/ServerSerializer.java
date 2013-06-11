@@ -17,7 +17,7 @@
 package unicopa.copa.base.com.serialization;
 
 import unicopa.copa.base.com.exception.APIException;
-import unicopa.copa.base.com.AbstractRequest;
+import unicopa.copa.base.com.request.AbstractRequest;
 
 /**
  * The serializer to be used by the server.

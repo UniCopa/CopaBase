@@ -16,7 +16,6 @@
  */
 package unicopa.copa.base.com.request;
 
-import unicopa.copa.base.com.AbstractResponse;
 import unicopa.copa.base.event.SingleEvent;
 
 /**
