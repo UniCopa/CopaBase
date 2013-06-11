@@ -23,5 +23,14 @@ package unicopa.copa.base;
  */
 public enum UserRole {
 
-    USER, RIGHTHOLDER, DEPUTY, OWNER, ADMINISTRATOR
+    USER(0), RIGHTHOLDER(1), DEPUTY(2), OWNER(3), ADMINISTRATOR(4);
+    private int level;
+
+    UserRole(int level) {
+	this.level = level;
+    }
+
+    public int level() {
+	return level;
+    }
 }
