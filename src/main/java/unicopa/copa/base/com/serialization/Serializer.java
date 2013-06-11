@@ -41,12 +41,20 @@ public class Serializer {
     protected static final Gson gson = new GsonBuilder()
 	    .registerTypeAdapter(RequestNotPracticableException.class,
 		    new SimpleExceptionSerializer())
+	    .registerTypeAdapter(RequestNotPracticableException.class,
+		    new RequestNotPracticableExceptionDeserializer())
 	    .registerTypeAdapter(InternalErrorException.class,
 		    new SimpleExceptionSerializer())
+	    .registerTypeAdapter(InternalErrorException.class,
+		    new InternalErrorExceptionDeserializer())
 	    .registerTypeAdapter(APIException.class,
 		    new SimpleExceptionSerializer())
+	    .registerTypeAdapter(APIException.class,
+		    new APIExceptionDeserializer())
 	    .registerTypeAdapter(PermissionException.class,
-		    new SimpleExceptionSerializer()).create();
+		    new SimpleExceptionSerializer())
+	    .registerTypeAdapter(PermissionException.class,
+		    new PermissionExceptionDeserializer()).create();
 
     public static String serialize(Object object) {
 	JsonElement je = gson.toJsonTree(object);
