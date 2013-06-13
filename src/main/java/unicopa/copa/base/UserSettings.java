@@ -170,8 +170,8 @@ public class UserSettings {
     }
 
     /**
-     * Add a subscription for an event. The ID is added to the set of
-     * subscriptions.
+     * Add a subscription for an event. The ID is added to the eventSettings map
+     * and a new UserEventSettings Object for that eventID is created
      * 
      * @param eventID
      *            the ID of the event to subscribe to
@@ -186,8 +186,8 @@ public class UserSettings {
     }
 
     /**
-     * Remove a subscribtion for an event. The ID is removed from the set of
-     * subscriptions.
+     * Remove a subscribtion for an event. The ID is removed from eventSettings
+     * map. The UserEventSettings for that event are removed as well
      * 
      * @param eventID
      *            the event to unsubscribe

@@ -54,7 +54,7 @@ public class UserSettingsTest {
 	settings.putEventSettings(4, eventsettings);
 	settings.putEventSettings(5, eventsettings);
 
-	assertEquals(settings.getEventSettings(3), null);
+	assertEquals(settings.getEventSettings(3).getColorCode(), null);
 	assertEquals(settings.getEventSettings(0), null);
 	assertEquals(settings.getEventSettings(-1), null);
 	assertEquals(settings.getEventSettings(4).getColorCode(), "testColor");
