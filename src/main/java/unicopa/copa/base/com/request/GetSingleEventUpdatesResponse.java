@@ -25,7 +25,7 @@ import unicopa.copa.base.event.SingleEventUpdate;
  * Answer to GetSingleEventUpdatesRequest.
  * 
  * Contains a list of lists of SingleEventUpdates. The SingleEventUpdates are in
- * the lowest level (orderd by date - newest object is at the last position).
+ * the lowest level (ordered by date - newest object is at the last position).
  * For every SingleEvent there is a new lower-list.
  * 
  * @author Philip Wendland

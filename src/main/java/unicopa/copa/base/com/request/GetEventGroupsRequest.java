@@ -20,7 +20,7 @@ package unicopa.copa.base.com.request;
 /**
  * A request for event groups.
  * 
- * The requestet event groups must match the search term and be of the category
+ * The requested event groups must match the search term and be of the category
  * specified by the Node-ID of the node from the category tree. If the search
  * term is null or empty, it will be ignored.
  * 

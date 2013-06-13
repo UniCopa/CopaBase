@@ -23,7 +23,7 @@ import unicopa.copa.base.event.Event;
 /**
  * Answer to GetEventsRequest.
  * 
- * Contains a list of events for the eventgroup from the request.
+ * Contains a list of events for the event group from the request.
  * 
  * @author Philip Wendland
  */

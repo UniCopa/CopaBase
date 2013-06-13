@@ -20,7 +20,7 @@ package unicopa.copa.base.com.request;
 import java.util.Date;
 
 /**
- * A request for up-to-date single events that beloing to the event-ID.
+ * A request for up-to-date single events that belonging to the event-ID.
  * 
  * Additionally, the requested single event(s) is/are scheduled after the date
  * since.

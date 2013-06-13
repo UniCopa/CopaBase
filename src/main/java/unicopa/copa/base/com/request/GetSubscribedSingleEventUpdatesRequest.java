@@ -21,7 +21,7 @@ import java.util.Date;
 
 /**
  * A request for all the SingleEventUpdates the user has subscribed for that
- * happend after the given date.
+ * happened after the given date.
  * 
  * @author Philip Wendland
  */

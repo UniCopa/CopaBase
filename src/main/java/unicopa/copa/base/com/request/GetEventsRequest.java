@@ -18,7 +18,7 @@
 package unicopa.copa.base.com.request;
 
 /**
- * A request for the events that belong to the eventgroup.
+ * A request for the events that belong to the event group.
  * 
  * The resulting events can be filtered by categories, that is the ID of the
  * node from the class CategoryNode
