@@ -32,19 +32,16 @@ public class UserSettings {
     private boolean emailNotification = false;
     private String language = "default";
     private Map<Integer, UserEventSettings> eventSettings = new HashMap<Integer, UserEventSettings>();
-    private Set<Integer> subscriptions = new HashSet<Integer>();
 
     /**
      * The constructor for UserSettings that is used by the Mapper
      */
     public UserSettings(Set<String> gcmKeys, boolean emailNotification,
-	    String language, Map<Integer, UserEventSettings> eventSettings,
-	    Set<Integer> subscriptions) {
+	    String language, Map<Integer, UserEventSettings> eventSettings) {
 	this.gcmKeys = gcmKeys;
 	this.emailNotification = emailNotification;
 	this.language = language;
 	this.eventSettings = eventSettings;
-	this.subscriptions = subscriptions;
     }
 
     /**
@@ -181,7 +178,11 @@ public class UserSettings {
      * @return true if the event was not already contained in the set
      */
     public boolean addSubscription(int eventID) {
-	return subscriptions.add(eventID);
+	if (eventSettings.containsKey(eventID))
+	    return false;
+
+	eventSettings.put(eventID, new UserEventSettings());
+	return true;
     }
 
     /**
@@ -193,7 +194,11 @@ public class UserSettings {
      * @return true if there has been a subscription to the specified event
      */
     public boolean removeSubscription(int eventID) {
-	return subscriptions.remove(eventID);
+	if (eventSettings.containsKey(eventID))
+	    return false;
+
+	eventSettings.remove(eventID);
+	return true;
     }
 
     /**
@@ -204,6 +209,15 @@ public class UserSettings {
      * @return true if the user has subscribed to the sepcified event
      */
     public boolean hasSubscribed(int eventID) {
-	return subscriptions.contains(eventID);
+	return eventSettings.keySet().contains(eventID);
+    }
+
+    /**
+     * Returns the Set of the subscribed EventIDs
+     * 
+     * @return
+     */
+    public Set<Integer> getSubscriptions() {
+	return eventSettings.keySet();
     }
 }
