@@ -36,14 +36,6 @@ public class GetEventGroupsResponse extends AbstractResponse {
 	this.eventGroupList = eventGroupList;
     }
 
-    /**
-     * 
-     * @param eventList
-     */
-    public void GetEventGroupsResponse(List<EventGroup> eventGroupList) {
-	this.eventGroupList = eventGroupList;
-    }
-
     public List<EventGroup> getEventGroupList() {
 	return this.eventGroupList;
     }
