@@ -32,6 +32,10 @@ public class GetEventGroupsResponse extends AbstractResponse {
 
     private List<EventGroup> eventGroupList;
 
+    public GetEventGroupsResponse(List<EventGroup> eventGroupList) {
+	this.eventGroupList = eventGroupList;
+    }
+
     /**
      * 
      * @param eventList
