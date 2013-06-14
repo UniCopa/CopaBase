@@ -14,33 +14,31 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+package unicopa.copa.base;
 
-package unicopa.copa.base.com.request;
-
-import unicopa.copa.base.ServerStatusNote;
-import java.util.List;
+import java.util.Date;
 
 /**
- * Answer to GetServerStatusNotesRequest.
+ * Holds information about the servers status. For example it can be used to
+ * announce maintenance downtime.
  * 
- * Contains a list of status notes (for example upcoming downtimes) that have
- * been created after the date given in the request.
- * 
- * @author Philip Wendland
+ * @author Felix Wiemuth
  */
-public class GetServerStatusNotesResponse extends AbstractResponse {
+public class ServerStatusNote {
+    private Date date;
+    private String note;
 
-    private List<ServerStatusNote> noteList;
-
-    /**
-     * 
-     * @param noteList
-     */
-    public GetServerStatusNotesResponse(List<ServerStatusNote> noteList) {
-	this.noteList = noteList;
+    public ServerStatusNote(Date date, String note) {
+	this.date = date;
+	this.note = note;
     }
 
-    public List<ServerStatusNote> getNotes() {
-	return this.noteList;
+    public Date getDate() {
+	return date;
     }
+
+    public String getNote() {
+	return note;
+    }
+
 }
