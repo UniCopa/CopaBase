@@ -17,29 +17,14 @@
 
 package unicopa.copa.base.com.request;
 
-import unicopa.copa.base.event.CategoryNode;
-
 /**
- * Answer to GetFilterRequest.
- * 
- * Contains the root of the category-tree and thereby the whole category-tree.
+ * A request for the categories (the category tree).
  * 
  * @author Philip Wendland
  */
-public class GetCategoryResponse extends AbstractResponse {
+public class GetCategoriesRequest extends AbstractRequest {
 
-    private CategoryNode categoryTree;
-
-    /**
-     * 
-     * @param CategoryTree
-     */
-    public GetCategoryResponse(CategoryNode categoryTree) {
-	this.categoryTree = categoryTree;
-    }
-
-    public CategoryNode getCategoryTree() {
-	return this.categoryTree;
+    public GetCategoriesRequest() {
     }
 
 }

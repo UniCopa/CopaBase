@@ -17,6 +17,7 @@
 package unicopa.copa.base.com.request;
 
 /**
+ * Get a SingleEvent by its ID.
  * 
  * @author Felix Wiemuth
  */
