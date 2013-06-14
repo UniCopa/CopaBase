@@ -21,7 +21,7 @@ package unicopa.copa.base.com.request;
  * A request for the events that belong to the event group.
  * 
  * The resulting events can be filtered by categories, that is the ID of the
- * node from the class CategoryNode
+ * node from the class CategoryNode.
  * 
  * @author Philip Wendland
  */
@@ -33,7 +33,10 @@ public class GetEventsRequest extends AbstractRequest {
     /**
      * 
      * @param eventGroupID
+     *            the ID of the EventGroup where to get Events from
      * @param categoryNodeID
+     *            the ID of the CategoryNode (returned events must have a
+     *            category that is a descendant of this category)
      */
     public GetEventsRequest(int eventGroupID, int categoryNodeID) {
 	this.categoryNodeID = categoryNodeID;
