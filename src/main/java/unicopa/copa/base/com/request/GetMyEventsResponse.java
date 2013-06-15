@@ -32,12 +32,29 @@ public class GetMyEventsResponse extends AbstractResponse {
     }
 
     /**
-     * Get a mapping from roles to eventIDs. The role indicates the role the
-     * user holds for the events with the IDs the role maps to.
+     * Get a list of event IDs where the user is RIGHTHOLDER.
      * 
      * @return
      */
-    public Map<UserRole, List<Integer>> getEventIDs() {
-	return eventIDs;
+    public List<Integer> getRightholderEvents() {
+	return eventIDs.get(UserRole.RIGHTHOLDER);
+    }
+
+    /**
+     * Get a list of event IDs where the user is DEPUTY.
+     * 
+     * @return
+     */
+    public List<Integer> getDeputyEvents() {
+	return eventIDs.get(UserRole.RIGHTHOLDER);
+    }
+
+    /**
+     * Get a list of event IDs where the user is OWNER.
+     * 
+     * @return
+     */
+    public List<Integer> getOwnerEvents() {
+	return eventIDs.get(UserRole.RIGHTHOLDER);
     }
 }
