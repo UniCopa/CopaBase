@@ -1,0 +1,53 @@
+/*
+ * Copyright (C) 2013 UniCoPA
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+package unicopa.copa.base.com.request;
+
+import java.util.List;
+import java.util.Map;
+import unicopa.copa.base.UserData;
+import unicopa.copa.base.UserRole;
+
+/**
+ * 
+ * @author Felix Wiemuth
+ */
+public class GetMyAppointedUsersResponse extends AbstractResponse {
+    private Map<UserRole, List<UserData>> appointedUsers;
+
+    public GetMyAppointedUsersResponse(
+	    Map<UserRole, List<UserData>> appointedUsers) {
+	this.appointedUsers = appointedUsers;
+    }
+
+    /**
+     * Get the user data of the rightholders the user appointed for the event.
+     * 
+     * @return
+     */
+    public List<UserData> getAppointedRightholders() {
+	return appointedUsers.get(UserRole.RIGHTHOLDER);
+    }
+
+    /**
+     * Get the user data of the rightholders the user appointed for the event.
+     * 
+     * @return
+     */
+    public List<UserData> getAppointedDeputies() {
+	return appointedUsers.get(UserRole.DEPUTY);
+    }
+}
