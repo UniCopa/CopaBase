@@ -34,7 +34,7 @@ public class Util {
      * updates a SingleEvent of another update A in the list 'updates', the
      * resulting list will contain a list with A-B in it. All updates that
      * origin at one SingleEvent will get into the same list, ordered by their
-     * data of occurence. The outer list is not sorted.
+     * date of occurence. The outer list is not sorted.
      * 
      * @param updates
      *            the list of updates to sort

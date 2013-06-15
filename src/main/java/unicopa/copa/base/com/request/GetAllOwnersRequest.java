@@ -37,5 +37,4 @@ public class GetAllOwnersRequest extends AbstractRequest {
     public int getEventID() {
 	return this.eventID;
     }
-
 }

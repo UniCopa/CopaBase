@@ -41,5 +41,4 @@ public class GetAllOwnersResponse extends AbstractResponse {
     public List<String> getNames() {
 	return this.names;
     }
-
 }
