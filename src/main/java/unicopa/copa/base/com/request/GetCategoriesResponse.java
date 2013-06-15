@@ -18,6 +18,7 @@
 package unicopa.copa.base.com.request;
 
 import unicopa.copa.base.event.CategoryNode;
+import unicopa.copa.base.event.CategoryNodeImpl;
 
 /**
  * Answer to GetFilterRequest.
@@ -28,13 +29,13 @@ import unicopa.copa.base.event.CategoryNode;
  */
 public class GetCategoriesResponse extends AbstractResponse {
 
-    private CategoryNode categoryTree;
+    private CategoryNodeImpl categoryTree;
 
     /**
      * 
      * @param CategoryTree
      */
-    public GetCategoriesResponse(CategoryNode categoryTree) {
+    public GetCategoriesResponse(CategoryNodeImpl categoryTree) {
 	this.categoryTree = categoryTree;
     }
 
