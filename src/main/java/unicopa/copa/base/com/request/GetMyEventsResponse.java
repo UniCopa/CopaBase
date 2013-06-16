@@ -46,7 +46,7 @@ public class GetMyEventsResponse extends AbstractResponse {
      * @return
      */
     public List<Integer> getDeputyEvents() {
-	return eventIDs.get(UserRole.RIGHTHOLDER);
+	return eventIDs.get(UserRole.DEPUTY);
     }
 
     /**
@@ -55,6 +55,6 @@ public class GetMyEventsResponse extends AbstractResponse {
      * @return
      */
     public List<Integer> getOwnerEvents() {
-	return eventIDs.get(UserRole.RIGHTHOLDER);
+	return eventIDs.get(UserRole.OWNER);
     }
 }
