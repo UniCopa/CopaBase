@@ -45,15 +45,15 @@ public class AddRoleToUserRequest extends AbstractRequest {
 	this.role = role;
     }
 
-    public void setEventID(int eventID) {
-	this.eventID = eventID;
+    public int getEventID() {
+        return eventID;
     }
 
-    public void setUserEmail(String userEmail) {
-	this.userEmail = userEmail;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setRole(UserRole role) {
-	this.role = role;
+    public UserRole getRole() {
+        return role;
     }
 }
