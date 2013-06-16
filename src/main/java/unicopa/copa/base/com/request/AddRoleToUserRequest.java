@@ -46,14 +46,14 @@ public class AddRoleToUserRequest extends AbstractRequest {
     }
 
     public int getEventID() {
-        return eventID;
+	return eventID;
     }
 
     public String getUserEmail() {
-        return userEmail;
+	return userEmail;
     }
 
     public UserRole getRole() {
-        return role;
+	return role;
     }
 }
