@@ -24,15 +24,12 @@ import unicopa.copa.base.event.SingleEvent;
  * @author Felix Wiemuth
  */
 public class AddSingleEventRequest extends AbstractRequest {
-    private int eventID;
     private SingleEvent newSingleEvent;
     private String comment;
 
     /**
      * Create the request.
      * 
-     * @param eventID
-     *            the ID of the event where to add the SingleEvent
      * @param newSingleEvent
      *            the SingleEvent to add (the ID is ignored)
      * @param comment
@@ -42,10 +39,6 @@ public class AddSingleEventRequest extends AbstractRequest {
     public AddSingleEventRequest(int eventID, SingleEvent newSingleEvent,
 	    String comment) {
 	throw new UnsupportedOperationException();
-    }
-
-    public int getEventID() {
-	return this.eventID;
     }
 
     public SingleEvent getNewSingleEvent() {
