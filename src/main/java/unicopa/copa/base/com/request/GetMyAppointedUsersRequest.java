@@ -22,7 +22,7 @@ package unicopa.copa.base.com.request;
  * 
  * @author Felix Wiemuth
  */
-public class GetMyAppointesUsersRequest extends AbstractRequest {
+public class GetMyAppointedUsersRequest extends AbstractRequest {
     private int eventID;
 
     /**
@@ -31,7 +31,7 @@ public class GetMyAppointesUsersRequest extends AbstractRequest {
      * @param eventID
      *            the ID of the event where to get the rightholders from
      */
-    public GetMyAppointesUsersRequest(int eventID) {
+    public GetMyAppointedUsersRequest(int eventID) {
 	this.eventID = eventID;
     }
 
