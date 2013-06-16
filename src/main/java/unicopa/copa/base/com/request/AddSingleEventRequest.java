@@ -36,9 +36,9 @@ public class AddSingleEventRequest extends AbstractRequest {
      *            the comment that shall be displayed in the resulting
      *            SingleEventUpdate
      */
-    public AddSingleEventRequest(int eventID, SingleEvent newSingleEvent,
-	    String comment) {
-	throw new UnsupportedOperationException();
+    public AddSingleEventRequest(SingleEvent newSingleEvent, String comment) {
+	this.newSingleEvent = newSingleEvent;
+	this.comment = comment;
     }
 
     public SingleEvent getNewSingleEvent() {
