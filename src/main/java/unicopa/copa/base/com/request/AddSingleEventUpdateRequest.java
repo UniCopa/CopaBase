@@ -32,7 +32,8 @@ public class AddSingleEventUpdateRequest extends AbstractRequest {
      * 
      * @param updatedSingleEvent
      *            the new SingleEvent that should replace an old one; the ID
-     *            must be the same as of the old one
+     *            must be the same as of the old one, the event ID is ignored
+     *            and stays the same
      * @param comment
      *            the comment to be displayed along with the resulting
      *            SingleEventUpdate
