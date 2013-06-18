@@ -29,6 +29,11 @@ public class UserData {
 	this.email = email;
     }
 
+    /**
+     * Get the name of the user in the form "<given name> <surname>".
+     * 
+     * @return
+     */
     public String getName() {
 	return name;
     }
