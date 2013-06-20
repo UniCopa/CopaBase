@@ -22,6 +22,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
+import java.util.Date;
 import unicopa.copa.base.com.exception.APIException;
 import unicopa.copa.base.com.exception.InternalErrorException;
 import unicopa.copa.base.com.exception.PermissionException;
@@ -54,7 +55,9 @@ public class Serializer {
 	    .registerTypeAdapter(PermissionException.class,
 		    new SimpleExceptionSerializer())
 	    .registerTypeAdapter(PermissionException.class,
-		    new PermissionExceptionDeserializer()).create();
+		    new PermissionExceptionDeserializer())
+	    .registerTypeAdapter(Date.class, new DateSerializer())
+	    .registerTypeAdapter(Date.class, new DateDeserializer()).create();
 
     public static String serialize(Object object) {
 	JsonElement je = gson.toJsonTree(object);
