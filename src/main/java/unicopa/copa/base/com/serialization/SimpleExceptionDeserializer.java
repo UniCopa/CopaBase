@@ -24,6 +24,7 @@ import com.google.gson.JsonElement;
  */
 public abstract class SimpleExceptionDeserializer {
     protected String getMessage(JsonElement json) {
-	return json.getAsJsonObject().get("message").getAsString();
+	JsonElement je = json.getAsJsonObject().get("message");
+	return je == null ? null : je.getAsString();
     }
 }

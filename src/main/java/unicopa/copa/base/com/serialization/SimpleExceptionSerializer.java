@@ -34,7 +34,9 @@ public class SimpleExceptionSerializer implements JsonSerializer<Exception> {
     public JsonElement serialize(Exception src, Type typeOfSrc,
 	    JsonSerializationContext context) {
 	JsonObject jsonObject = new JsonObject();
-	jsonObject.add("message", new JsonPrimitive(src.getMessage()));
+	JsonPrimitive jp = src.getMessage() == null ? null : new JsonPrimitive(
+		src.getMessage());
+	jsonObject.add("message", jp);
 	return jsonObject;
     }
 }
