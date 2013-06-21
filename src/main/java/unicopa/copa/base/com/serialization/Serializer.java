@@ -93,7 +93,7 @@ public class Serializer {
 	    JsonElement dataClassJE = jo.get("type");
 	    if (dataClassJE == null) {
 		throw new APIException(
-			"The JSON object does not contain the required \"type\" attribute.");
+			"The JSON object sent to the server does not contain the required \"type\" attribute.");
 	    }
 	    String className = dataClassJE.getAsString();
 	    // try to find class in all allowed packages
@@ -107,7 +107,7 @@ public class Serializer {
 	    }
 	    if (dataClass == null) {
 		throw new APIException(
-			"The class name specified in attribute \"type\" in the JSON string (\""
+			"The class name specified in attribute \"type\" in the JSON string sent to the server (\""
 				+ className
 				+ "\") does not contain a class name known to the system.");
 	    }
@@ -115,7 +115,7 @@ public class Serializer {
 	    JsonElement dataJE = jo.get("data");
 	    if (dataJE == null) {
 		throw new APIException(
-			"The JSON object does not contain the required \"data\" attribute.");
+			"The JSON object sent to the server does not contain the required \"data\" attribute.");
 	    }
 	    Object data = gson.fromJson(dataJE, dataClass);
 	    return data;
@@ -123,7 +123,8 @@ public class Serializer {
 	    // assuming the exception is either JsonSyntaxException, because
 	    // JsonIOException will not occur (no input streams used)
 	    throw new APIException(
-		    "The JSON string is malformatted (contains syntax errors).");
+		    "The JSON string sent to the server is malformatted (contains syntax errors): "
+			    + ex.getMessage());
 	}
     }
 }

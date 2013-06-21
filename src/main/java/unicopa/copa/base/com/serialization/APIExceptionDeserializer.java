@@ -32,6 +32,7 @@ public class APIExceptionDeserializer extends SimpleExceptionDeserializer
     @Override
     public APIException deserialize(JsonElement json, Type typeOfT,
 	    JsonDeserializationContext context) throws JsonParseException {
-	return new APIException(getMessage(json));
+	return new APIException("Cannot deserialize the JSON string: "
+		+ getMessage(json));
     }
 }
