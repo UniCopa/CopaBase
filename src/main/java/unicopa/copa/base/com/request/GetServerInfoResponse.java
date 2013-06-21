@@ -16,10 +16,20 @@
  */
 package unicopa.copa.base.com.request;
 
+import unicopa.copa.base.ServerInfo;
+
 /**
  * 
  * @author Felix Wiemuth
  */
 public class GetServerInfoResponse extends AbstractResponse {
+    private ServerInfo serverInfo;
 
+    public GetServerInfoResponse(ServerInfo serverInfo) {
+	this.serverInfo = serverInfo;
+    }
+
+    public ServerInfo getServerInfo() {
+	return serverInfo;
+    }
 }

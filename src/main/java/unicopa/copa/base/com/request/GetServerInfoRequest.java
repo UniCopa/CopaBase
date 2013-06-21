@@ -17,6 +17,7 @@
 package unicopa.copa.base.com.request;
 
 /**
+ * Get information about the service.
  * 
  * @author Felix Wiemuth
  */
