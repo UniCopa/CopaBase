@@ -49,32 +49,34 @@ public class CategoryNodeImpl implements CategoryNode {
     public void addChildNode(CategoryNodeImpl node) {
 	children.add(node);
     }
-    
+
     /**
      * Merge the given path into the subtree denoted by this CategoryNode.
-     * @param path the path to insert
-     * @return the ID of the created and inserted node (last node of the path)
+     * 
+     * @param path
+     *            the path to insert
+     * @return the created and inserted node (last node of the path)
      */
     public CategoryNode insertNode(List<String> path) {
-        if (path.isEmpty()) {
-            return this;
-        } else {
-            CategoryNodeImpl found = null;
-            String current = path.get(0);
-            for (CategoryNodeImpl child : children) {
-                if (child.getName().equals(current)) {
-                    found = child;
-                    break;
-                }
-            }
-            if (found == null) {
-                CategoryNodeImpl node = new CategoryNodeImpl(0, current);
-                children.add(node);
-                return node.insertNode(path.subList(1, path.size()));
-            } else {
-                return found.insertNode(path.subList(1, path.size()));
-            }
-        }
+	if (path.isEmpty()) {
+	    return this;
+	} else {
+	    CategoryNodeImpl found = null;
+	    String current = path.get(0);
+	    for (CategoryNodeImpl child : children) {
+		if (child.getName().equals(current)) {
+		    found = child;
+		    break;
+		}
+	    }
+	    if (found == null) {
+		CategoryNodeImpl node = new CategoryNodeImpl(0, current);
+		children.add(node);
+		return node.insertNode(path.subList(1, path.size()));
+	    } else {
+		return found.insertNode(path.subList(1, path.size()));
+	    }
+	}
     }
 
     @Override
@@ -90,5 +92,14 @@ public class CategoryNodeImpl implements CategoryNode {
     @Override
     public List<CategoryNodeImpl> getChildren() {
 	return this.children;
+    }
+
+    /**
+     * Set the name of this node.
+     * 
+     * @param name
+     */
+    public void setName(String name) {
+	this.name = name;
     }
 }
