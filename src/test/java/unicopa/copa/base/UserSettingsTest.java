@@ -37,9 +37,9 @@ public class UserSettingsTest {
 	assertEquals(settings.hasSubscribed(3), false);
 	assertEquals(settings.hasSubscribed(0), false);
 	assertEquals(settings.hasSubscribed(-1), false);
-	assertEquals(settings.getLanguage(), "default");
+	assertEquals(settings.getLanguage(), "english");
 	assertEquals(settings.isEmailNotificationEnabled(), false);
-	assertEquals(settings.getGCMKeys().isEmpty(), true);
+	assertEquals(settings.getGCMKeys().isEmpty(), true);        
 
 	settings.addGCMKey("key1");
 	settings.addGCMKey("key2");
