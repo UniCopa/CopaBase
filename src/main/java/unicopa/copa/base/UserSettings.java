@@ -30,7 +30,7 @@ public class UserSettings {
 
     private Set<String> gcmKeys = new HashSet<String>();
     private boolean emailNotification = false;
-    private String language = "default";
+    private String language = "english";
     private Map<Integer, UserEventSettings> eventSettings = new HashMap<Integer, UserEventSettings>();
 
     /**
@@ -194,11 +194,12 @@ public class UserSettings {
      * @return true if there has been a subscription to the specified event
      */
     public boolean removeSubscription(int eventID) {
-	if (eventSettings.containsKey(eventID))
-	    return false;
-
-	eventSettings.remove(eventID);
-	return true;
+	if (eventSettings.containsKey(eventID)) {
+            eventSettings.remove(eventID);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
